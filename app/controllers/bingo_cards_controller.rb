@@ -1,0 +1,2 @@
+class BingoCardsController < ApplicationController
+end
