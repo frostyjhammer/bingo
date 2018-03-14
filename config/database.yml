@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: bingo_development
+  database: postgres
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: bingo_test
+  database: postgres
   host: localhost
   port: 5432
   username: rails_dev
@@ -84,6 +84,6 @@ test:
 #
 production:
   <<: *default
-  database: bingo_production
+  database: postgres
   username: bingo
   password: <%= ENV['BINGO_DATABASE_PASSWORD'] %>

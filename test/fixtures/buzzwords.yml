@@ -2,8 +2,8 @@
 
 one:
   category: MyString
-  buzzwords: MyText
+  word: MyString
 
 two:
   category: MyString
-  buzzwords: MyText
+  word: MyString

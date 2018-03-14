@@ -15,8 +15,24 @@ class BuzzwordsController < ApplicationController
 
 require 'pg'
   begin
-    con = PG.connect :dbname => 'bingo_test', :user => 'rails_dev'
-    puts 'Server Version: ' + con.server_version.to_s
+    con = PG.connect :dbname => 'postgres', :user => 'rails_dev', :password => 'Rails-Dev-4'
+    puts 'Server Version: ' + con.server_version.to_s.split('0').join('.')
+
+    user = con.user
+    db_name = con.db
+    pswd = con.pass
+
+    puts "User: #{user}"
+    puts "Database name: #{db_name}"
+#   puts "Password: #{pswd}"
+    puts
+
+    puts "Let's try to write to the database, then!"
+##  con.exec "INSERT INTO buzzwords (category, word) VALUES ('Default','Postgresql Rules!')"
+##  con.exec "INSERT INTO buzzwords (category, word, created_at, updated_at) VALUES ('Default', 'Postgresql Rules!', Time.now, Time.now)"
+    con.exec "INSERT INTO buzzwords (category, word, created_at, updated_at) VALUES ('Default', 'Postgresql Rules!', NOW(), NOW())"
+    puts
+
   rescue PG::Error => e
     puts e.message
   ensure
