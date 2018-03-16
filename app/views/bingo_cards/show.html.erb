@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Buzzword Bingo</title>
+    <script type="text/javascript" src="https://assets.orcasnet.com/javascripts/orcasnet_libraries_1.1.js"></script>
+    <script type="text/javascript">
+      <!--
+      var dkColor;
+      var ltColor;
+      $(document).ready(function() {
+        $.each($('td'), function(i, td) { td.onclick = function() { doClick(this); }; });
+        $.each($('.btn'), function(i, btn) {
+          btn.onclick = function() { doColor(this); };
+          btn.style.color = '#'+btn.classList[1];
+          btn.style.backgroundColor = '#'+btn.classList[2];
+          btn.style.textcolor = '#'+btn.classList[1];
+        });
+        doColor($('.btn[value="!COLOR!"]')[0]);
+      });
+      function doClick(td) {
+        td.className = (td.className == 'uncovered') ? 'covered' : 'uncovered';
+        td.style.backgroundColor = td.className == 'covered' ? dkColor : ltColor;
+        var numCovered = 0;
+        $.each($('td'), function(i, td) { numCovered += td.className == 'covered' ? 1 : 0 });
+        if (numCovered >= 25 ) alert('BINGO!');
+      }
+      function doColor(btn) {
+        dkColor = '#'+btn.classList[1];
+        ltColor = '#'+btn.classList[2];
+        $.each($('th'), function(i, th) { th.style.backgroundColor = dkColor; });
+        $.each($('td'), function(i, td) { td.style.backgroundColor = td.className == 'covered' ? dkColor : ltColor; });
+      }
+      //-->
+    </script>
+    <style>
+      .btn {
+        width: 70px;
+        height: 40px;
+        border: 2px solid;
+        border-radius: 10px;
+        font-size: 10pt;
+        text-align: center;
+      }
+      table {
+        border-radius: 32px 32px 32px 32px;
+        background-color: #606060;
+        margin-top: 30px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      th {
+        background-color: #808080;
+        height: 90px;
+        text-align: center;
+        font-size: 48pt;
+        color: #e0e0e0;
+        text-shadow: -2px -2px 0 #606060,	2px -2px 0 #606060,	-2px 2px 0 #606060,	2px 2px 0 #606060;
+      }
+      td {
+        background-color: #e0e0e0;
+        height: 120px;
+        width: 120px;
+        text-align: center;
+        font-size: 14pt;
+        color: #404040;
+        padding: 5px;
+      }
+      th:first-child { border-radius: 30px 0 0 0; }
+      th:last-child { border-radius: 0 30px 0 0; }
+      tr:last-child td:first-child { border-radius: 0 0 0 30px; }
+      tr:last-child td:last-child { border-radius: 0 0 30px 0; }
+      div {
+        text-align: center;
+        margin-top: 10px;
+      }
+      @media print {
+        .btn { display: none; }
+        th { background-color: #e0e0e0 !important; }
+        td.covered { background-color: #e0e0e0 !important; }
+        td.uncovered { background-color: #ffffff !important; }
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>B</th><th>I</th><th>N</th><th>G</th><th>O</th>
+      </tr>
+      <tr>
+        <td class="uncovered">!BUZZWORD!</td>
+        <td class="uncovered">!BUZZWORD!</td>
+        <td class="uncovered">!BUZZWORD!</td>
+        <td class="uncovered">!BUZZWORD!</td>
+        <td class="uncovered">!BUZZWORD!</td>
+      </tr>
+      <tr>
+        <td class="uncovered">!BUZZWORD!</td>
+        <td class="uncovered">!BUZZWORD!</td>
+        <td class="uncovered">!BUZZWORD!</td>
+        <td class="uncovered">!BUZZWORD!</td>
+        <td class="uncovered">!BUZZWORD!</td>
+      </tr>
+      <tr>
+        <td class="uncovered">!BUZZWORD!</td>
+        <td class="uncovered">!BUZZWORD!</td>
+        <td id="free-space" class="covered">FREE<br>SPACE</td>
+        <td class="uncovered">!BUZZWORD!</td>
+        <td class="uncovered">!BUZZWORD!</td>
+      </tr>
+      <tr>
+        <td class="uncovered">!BUZZWORD!</td>
+        <td class="uncovered">!BUZZWORD!</td>
+        <td class="uncovered">!BUZZWORD!</td>
+        <td class="uncovered">!BUZZWORD!</td>
+        <td class="uncovered">!BUZZWORD!</td>
+      </tr>
+      <tr>
+        <td class="uncovered">!BUZZWORD!</td>
+        <td class="uncovered">!BUZZWORD!</td>
+        <td class="uncovered">!BUZZWORD!</td>
+        <td class="uncovered">!BUZZWORD!</td>
+        <td class="uncovered">!BUZZWORD!</td>
+      </tr>
+    </table>
+    <div>
+      <input type="button" class="btn c060a0 ffc0e0" value="violet">
+      <input type="button" class="btn a060c0 f0c0ff" value="indigo">
+      <input type="button" class="btn 6080c0 c0e0ff" value="blue">
+      <input type="button" class="btn 608060 e0ffe0" value="green">
+      <input type="button" class="btn a0a060 ffffa0" value="yellow">
+      <input type="button" class="btn c08040 ffe0a0" value="orange">
+      <input type="button" class="btn e06080 ffc0d0" value="red">
+      <input type="button" class="btn 808080 e0e0e0" value="gray">
+    </div>
+  </body>
+</html>
