@@ -25,7 +25,16 @@
         td.style.backgroundColor = td.classList[0] == 'covered' ? dkColor : ltColor;
         var numCovered = 0;
         $.each($('td'), function(i, td) { numCovered += td.classList[0] == 'covered' ? 1 : 0 });
-        if (numCovered >= 25 ) alert('BINGO!');
+        if (numCovered >= 25 ) {
+          alert('Blackout Bingo!');
+          return;
+        }
+        var numCovered = 0;
+        $.each($('td.r1'), function(i, td) { numCovered += td.classList[0] == 'covered' ? 1 : 0 });
+        if (numCovered >= 5 ) {
+          alert('Row 1 Bingo!');
+          return;
+        }
       }
       function doColor(btn) {
         if (!btn) return false;
