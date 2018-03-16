@@ -23,8 +23,9 @@ class BuzzwordsController < ApplicationController
         con.close if con
       end
     }
-    notice = 'Added: ' + number_with_delimiter(nwords.to_s) + ' buzzwords to Category: ' + category + '.'
+    notice = 'Added ' + number_with_delimiter(nwords.to_s) + ' buzzwords to Category: ' + category + '.'
     puts notice
+    redirect_to(:new_buzzword, notice: notice)
   end
 
 end
