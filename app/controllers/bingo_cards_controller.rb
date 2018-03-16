@@ -1,5 +1,16 @@
 class BingoCardsController < ApplicationController
+  require 'pg'
   def show
+    category = 'Abbrev'
+    begin
+      con = PG.connect :dbname => 'postgres', :user => 'rails_dev', :password => 'Rails-Dev-4'
+      sql = "SELECT word FROM buzzwords WHERE category = '#{category}' ORDER BY RANDOM() LIMIT 24"
+      res  = con.exec(sql)
+    rescue PG::Error => e
+      puts e.message
+    ensure
+      con.close if con
+    end
     @word1 = "Buzzword1"
     @word2 = "Buzzword2"
     @word3 = "Buzzword3"
