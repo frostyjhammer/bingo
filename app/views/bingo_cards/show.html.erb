@@ -45,7 +45,14 @@
             return;
           }
         }
-
+        for (diag = 1; diag <= 5; diag++) {
+          var numCovered = 0;
+          $.each($('td.d'+diag), function(i, td) { numCovered += td.classList[0] == 'covered' ? 1 : 0 });
+          if (numCovered >= 5 ) {
+            alert('Diagonal ' + diag + ' Bingo!');
+            return;
+          }
+        }
       }
       function doColor(btn) {
         if (!btn) return false;
