@@ -19,18 +19,20 @@
         doColor($('.btn[value="gray"]')[0]);
       });
       function doClick(td) {
-        td.className = (td.className == 'uncovered') ? 'covered' : 'uncovered';
-        td.style.backgroundColor = td.className == 'covered' ? dkColor : ltColor;
+        var cl = td.className.split(' ');
+        cl[0] = (td.classList[0] == 'uncovered') ? 'covered' : 'uncovered';
+        td.className = cl.join(' ');
+        td.style.backgroundColor = td.classList[0] == 'covered' ? dkColor : ltColor;
         var numCovered = 0;
-        $.each($('td'), function(i, td) { numCovered += td.className == 'covered' ? 1 : 0 });
+        $.each($('td'), function(i, td) { numCovered += td.classList[0] == 'covered' ? 1 : 0 });
         if (numCovered >= 25 ) alert('BINGO!');
       }
       function doColor(btn) {
         if (!btn) return false;
-        dkColor = '#'+btn.classList[1];
-        ltColor = '#'+btn.classList[2];
+        dkColor = '#' + btn.classList[1];
+        ltColor = '#' + btn.classList[2];
         $.each($('th'), function(i, th) { th.style.backgroundColor = dkColor; });
-        $.each($('td'), function(i, td) { td.style.backgroundColor = td.className == 'covered' ? dkColor : ltColor; });
+        $.each($('td'), function(i, td) { td.style.backgroundColor = td.classList[0] == 'covered' ? dkColor : ltColor; });
       }
       //-->
     </script>
@@ -89,39 +91,39 @@
         <th>B</th><th>I</th><th>N</th><th>G</th><th>O</th>
       </tr>
       <tr>
-        <td class="uncovered"><%= @word1 %></td>
-        <td class="uncovered"><%= @word2 %></td>
-        <td class="uncovered"><%= @word3 %></td>
-        <td class="uncovered"><%= @word4 %></td>
-        <td class="uncovered"><%= @word5 %></td>
+        <td class="uncovered r1 c1 d1"> <%= @word1 %> </td>
+        <td class="uncovered r1 c2">    <%= @word2 %> </td>
+        <td class="uncovered r1 c3">    <%= @word3 %> </td>
+        <td class="uncovered r1 c4">    <%= @word4 %> </td>
+        <td class="uncovered r1 c5 d2"> <%= @word5 %> </td>
       </tr>
       <tr>
-        <td class="uncovered"><%= @word6 %></td>
-        <td class="uncovered"><%= @word7 %></td>
-        <td class="uncovered"><%= @word8 %></td>
-        <td class="uncovered"><%= @word9 %></td>
-        <td class="uncovered"><%= @word10 %></td>
+        <td class="uncovered r2 c1">    <%= @word6 %> </td>
+        <td class="uncovered r2 c2 d1"> <%= @word7 %> </td>
+        <td class="uncovered r2 c3">    <%= @word8 %> </td>
+        <td class="uncovered r2 c4 d2"> <%= @word9 %> </td>
+        <td class="uncovered r2 c5">    <%= @word10 %> </td>
       </tr>
       <tr>
-        <td class="uncovered"><%= @word11 %></td>
-        <td class="uncovered"><%= @word12 %></td>
-        <td class="covered" id="free-space">FREE<br>SPACE</td>
-        <td class="uncovered"><%= @word13 %></td>
-        <td class="uncovered"><%= @word14 %></td>
+        <td class="uncovered r3 c1">    <%= @word11 %> </td>
+        <td class="uncovered r3 c2">    <%= @word12 %> </td>
+        <td class="covered r3 c3 d1 d2" id="free-space">FREE<br>SPACE</td>
+        <td class="uncovered r3 c4">    <%= @word13 %> </td>
+        <td class="uncovered r3 c5">    <%= @word14 %> </td>
       </tr>
       <tr>
-        <td class="uncovered"><%= @word15 %></td>
-        <td class="uncovered"><%= @word16 %></td>
-        <td class="uncovered"><%= @word17 %></td>
-        <td class="uncovered"><%= @word18 %></td>
-        <td class="uncovered"><%= @word19 %></td>
+        <td class="uncovered r4 c1">    <%= @word15 %> </td>
+        <td class="uncovered r4 c2 d2"> <%= @word16 %> </td>
+        <td class="uncovered r4 c3">    <%= @word17 %> </td>
+        <td class="uncovered r4 c4 d1"> <%= @word18 %> </td>
+        <td class="uncovered r4 c5">    <%= @word19 %> </td>
       </tr>
       <tr>
-        <td class="uncovered"><%= @word20 %></td>
-        <td class="uncovered"><%= @word21 %></td>
-        <td class="uncovered"><%= @word22 %></td>
-        <td class="uncovered"><%= @word23 %></td>
-        <td class="uncovered"><%= @word24 %></td>
+        <td class="uncovered r5 c1 d2"> <%= @word20 %> </td>
+        <td class="uncovered r5 c2">    <%= @word21 %> </td>
+        <td class="uncovered r5 c3">    <%= @word22 %> </td>
+        <td class="uncovered r5 c4">    <%= @word23 %> </td>
+        <td class="uncovered r5 c5 d1"> <%= @word24 %> </td>
       </tr>
     </table>
     <div>
