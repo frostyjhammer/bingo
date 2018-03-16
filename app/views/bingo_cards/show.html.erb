@@ -15,7 +15,8 @@
           btn.style.backgroundColor = '#'+btn.classList[2];
           btn.style.textcolor = '#'+btn.classList[1];
         });
-        doColor($('.btn[value="!COLOR!"]')[0]);
+//      doColor($('.btn[value="!COLOR!"]')[0]);
+        doColor($('.btn[value="gray"]')[0]);
       });
       function doClick(td) {
         td.className = (td.className == 'uncovered') ? 'covered' : 'uncovered';
@@ -25,6 +26,7 @@
         if (numCovered >= 25 ) alert('BINGO!');
       }
       function doColor(btn) {
+        if (!btn) return false;
         dkColor = '#'+btn.classList[1];
         ltColor = '#'+btn.classList[2];
         $.each($('th'), function(i, th) { th.style.backgroundColor = dkColor; });
