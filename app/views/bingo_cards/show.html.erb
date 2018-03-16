@@ -29,12 +29,23 @@
           alert('Blackout Bingo!');
           return;
         }
-        var numCovered = 0;
-        $.each($('td.r1'), function(i, td) { numCovered += td.classList[0] == 'covered' ? 1 : 0 });
-        if (numCovered >= 5 ) {
-          alert('Row 1 Bingo!');
-          return;
+        for (row = 1; row <= 5; row++) {
+          var numCovered = 0;
+          $.each($('td.r'+row), function(i, td) { numCovered += td.classList[0] == 'covered' ? 1 : 0 });
+          if (numCovered >= 5 ) {
+            alert('Row ' + row + ' Bingo!');
+            return;
+          }
         }
+        for (col = 1; col <= 5; col++) {
+          var numCovered = 0;
+          $.each($('td.c'+col), function(i, td) { numCovered += td.classList[0] == 'covered' ? 1 : 0 });
+          if (numCovered >= 5 ) {
+            alert('Column ' + col + ' Bingo!');
+            return;
+          }
+        }
+
       }
       function doColor(btn) {
         if (!btn) return false;
