@@ -23,6 +23,9 @@
         cl[0] = (td.classList[0] == 'uncovered') ? 'covered' : 'uncovered';
         td.className = cl.join(' ');
         td.style.backgroundColor = td.classList[0] == 'covered' ? dkColor : ltColor;
+        setTimeout('doCheckBingo()',20);
+      }
+      function doCheckBingo() {
         var numCovered = 0;
         $.each($('td'), function(i, td) { numCovered += td.classList[0] == 'covered' ? 1 : 0 });
         if (numCovered >= 25 ) {
