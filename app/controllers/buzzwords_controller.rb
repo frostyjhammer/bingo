@@ -1,7 +1,10 @@
 class BuzzwordsController < ApplicationController
   require 'pg'
+  include ActionView::Helpers::NumberHelper
+
   def new
   end
+
   def create
     p = params[:buzzword]
     category = p['category']
@@ -20,6 +23,7 @@ class BuzzwordsController < ApplicationController
         con.close if con
       end
     }
-    puts 'Added: ' + nwords.to_s
+    puts 'Added: ' + number_with_delimiter(nwords.to_s)
   end
+
 end
