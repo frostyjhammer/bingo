@@ -7,6 +7,7 @@
       <!--
       var dkColor;
       var ltColor;
+      var hasBingo = false;
       $(document).ready(function() {
         $.each($('td'), function(i, td) { td.onclick = function() { doClick(this); }; });
         $.each($('.btn'), function(i, btn) {
@@ -15,7 +16,6 @@
           btn.style.backgroundColor = '#'+btn.classList[2];
           btn.style.textcolor = '#'+btn.classList[1];
         });
-//      doColor($('.btn[value="!COLOR!"]')[0]);
         doColor($('.btn[value="gray"]')[0]);
       });
       function doClick(td) {
@@ -32,10 +32,12 @@
           alert('Blackout Bingo!');
           return;
         }
+        if (hasBingo) return;
         for (row = 1; row <= 5; row++) {
           var numCovered = 0;
           $.each($('td.r'+row), function(i, td) { numCovered += td.classList[0] == 'covered' ? 1 : 0 });
           if (numCovered >= 5 ) {
+            hasBingo = true;
             alert('Row ' + row + ' Bingo!');
             return;
           }
@@ -44,6 +46,7 @@
           var numCovered = 0;
           $.each($('td.c'+col), function(i, td) { numCovered += td.classList[0] == 'covered' ? 1 : 0 });
           if (numCovered >= 5 ) {
+            hasBingo = true;
             alert('Column ' + col + ' Bingo!');
             return;
           }
@@ -52,6 +55,7 @@
           var numCovered = 0;
           $.each($('td.d'+diag), function(i, td) { numCovered += td.classList[0] == 'covered' ? 1 : 0 });
           if (numCovered >= 5 ) {
+            hasBingo = true;
             alert('Diagonal ' + diag + ' Bingo!');
             return;
           }
