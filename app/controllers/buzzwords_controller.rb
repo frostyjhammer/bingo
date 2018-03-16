@@ -23,7 +23,7 @@ class BuzzwordsController < ApplicationController
         con.close if con
       end
     }
-    puts 'Added: ' + number_with_delimiter(nwords.to_s)
+    puts 'Added: ' + number_with_delimiter(nwords.to_s) + ' buzzwords to Cateogry: ' + category + '.'
   end
 
 end
