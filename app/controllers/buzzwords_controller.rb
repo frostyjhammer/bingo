@@ -11,7 +11,7 @@ class BuzzwordsController < ApplicationController
     words = p['buzzwords'].split(/[\r\n]+/)
     nwords = 0
     words.each {|w|
-      puts 'Category: ' + category + '. Buzzword: ' + w + '.'
+      puts 'Category: ' + category + ' Buzzword: ' + w
       nwords += 1
       begin
         con = PG.connect :dbname => 'postgres', :user => 'rails_dev', :password => 'Rails-Dev-4'
@@ -23,7 +23,8 @@ class BuzzwordsController < ApplicationController
         con.close if con
       end
     }
-    puts 'Added: ' + number_with_delimiter(nwords.to_s) + ' buzzwords to Cateogry: ' + category + '.'
+    notice = 'Added: ' + number_with_delimiter(nwords.to_s) + ' buzzwords to Category: ' + category + '.'
+    puts notice
   end
 
 end
