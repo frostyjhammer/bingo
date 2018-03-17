@@ -3,11 +3,7 @@ class BuzzwordsController < ApplicationController
   include ActionView::Helpers::NumberHelper
 
   def new
-##  params.each {|key,value| puts "key=>#{key}"}
-    category = params['category']
-    puts 'Category:' + category
-
-
+    params.each {|key,value| puts "key=>#{key}"}
   end
 
   def create
