@@ -12,6 +12,7 @@ class BuzzwordsController < ApplicationController
     words = p['buzzwords'].split(/[\r\n]+/)
     nwords = 0
     words.each {|word|
+      word = word.strip!
       begin
         con = PG.connect :dbname => 'postgres', :user => 'rails_dev', :password => 'Rails-Dev-4'
         sql = "SELECT word FROM buzzwords WHERE category = '#{category}' AND word = '#{word}'"
