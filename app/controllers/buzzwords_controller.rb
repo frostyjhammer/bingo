@@ -11,12 +11,12 @@ class BuzzwordsController < ApplicationController
     category = p['category']
     words = p['buzzwords'].split(/[\r\n]+/)
     nwords = 0
-    words.each {|w|
-      puts 'Category: ' + category + ' Buzzword: ' + w
+    words.each {|word|
+      puts 'Category: ' + category + ' Buzzword: ' + word
       nwords += 1
       begin
         con = PG.connect :dbname => 'postgres', :user => 'rails_dev', :password => 'Rails-Dev-4'
-        con.exec "INSERT INTO buzzwords (category, word, created_at, updated_at) VALUES ('#{category}', '#{w}', NOW(), NOW())"
+        con.exec "INSERT INTO buzzwords (category, word, created_at, updated_at) VALUES ('#{category}', '#{word}', NOW(), NOW())"
       rescue PG::Error => e
         puts e.message
         nwords -= 1
