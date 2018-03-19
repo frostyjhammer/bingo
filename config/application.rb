@@ -13,3 +13,8 @@ module Bingo
     # -- all .rb files in that directory are automatically loaded.
   end
 end
+
+
+class Application < Rails::Application
+  config.web_console.whiny_requests = false
+end
