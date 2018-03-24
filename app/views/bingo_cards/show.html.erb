@@ -19,6 +19,7 @@
         doColor($('.btn[value="gray"]')[0]);
       });
       function doClick(td) {
+        if (td.id == 'free-space') return false;
         var cl = td.className.split(' ');
         cl[0] = (td.classList[0] == 'uncovered') ? 'covered' : 'uncovered';
         td.className = cl.join(' ');
@@ -31,6 +32,9 @@
         if (numCovered >= 25 ) {
           alert('Blackout Bingo!');
           return;
+        }
+        if (numCovered <= 1) {
+          hasBingo = false;
         }
         if (hasBingo) return;
         for (row = 1; row <= 5; row++) {
@@ -165,9 +169,9 @@
       <input type="button" class="btn a060c0 f0c0ff" value="indigo">
       <input type="button" class="btn 6080c0 c0e0ff" value="blue">
       <input type="button" class="btn 608060 e0ffe0" value="green">
-      <input type="button" class="btn a0a060 ffffa0" value="yellow">
+      <input type="button" class="btn a09040 ffffa0" value="yellow">
       <input type="button" class="btn c08040 ffe0a0" value="orange">
-      <input type="button" class="btn e06080 ffc0d0" value="red">
+      <input type="button" class="btn c04060 ffc0d0" value="red">
       <input type="button" class="btn 808080 e0e0e0" value="gray">
     </div>
   </body>
