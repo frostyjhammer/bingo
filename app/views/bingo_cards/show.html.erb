@@ -4,7 +4,6 @@
     <title>Buzzword Bingo</title>
     <script type="text/javascript" src="https://assets.orcasnet.com/javascripts/orcasnet_libraries_1.1.js"></script>
     <script type="text/javascript">
-      <!--
       var dkColor;
       var ltColor;
       var hasBingo = false;
@@ -30,7 +29,7 @@
         var numCovered = 0;
         $.each($('td'), function(i, td) { numCovered += td.classList[0] == 'covered' ? 1 : 0 });
         if (numCovered >= 25 ) {
-          alert('Blackout Bingo!');
+          custom_alert('Blackout Bingo!');
           return;
         }
         if (numCovered <= 1) {
@@ -42,7 +41,7 @@
           $.each($('td.r'+row), function(i, td) { numCovered += td.classList[0] == 'covered' ? 1 : 0 });
           if (numCovered >= 5 ) {
             hasBingo = true;
-            alert('Row ' + row + ' Bingo!');
+            custom_alert('Row ' + row + ' Bingo!');
             return;
           }
         }
@@ -51,7 +50,7 @@
           $.each($('td.c'+col), function(i, td) { numCovered += td.classList[0] == 'covered' ? 1 : 0 });
           if (numCovered >= 5 ) {
             hasBingo = true;
-            alert('Column ' + col + ' Bingo!');
+            custom_alert('Column ' + col + ' Bingo!');
             return;
           }
         }
@@ -60,7 +59,7 @@
           $.each($('td.d'+diag), function(i, td) { numCovered += td.classList[0] == 'covered' ? 1 : 0 });
           if (numCovered >= 5 ) {
             hasBingo = true;
-            alert('Diagonal ' + diag + ' Bingo!');
+            custom_alert('Diagonal ' + diag + ' Bingo!');
             return;
           }
         }
@@ -72,7 +71,9 @@
         $.each($('th'), function(i, th) { th.style.backgroundColor = dkColor; });
         $.each($('td'), function(i, td) { td.style.backgroundColor = td.classList[0] == 'covered' ? dkColor : ltColor; });
       }
-      //-->
+      function custom_alert(str) {
+        alert('testing... '+ str);
+      }
     </script>
     <style>
       table {
