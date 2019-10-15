@@ -37,7 +37,7 @@
         }
         if (hasBingo) return;
         for (row = 1; row <= 5; row++) {
-          var numCovered = 0;
+          numCovered = 0;
           $.each($('td.r'+row), function(i, td) { numCovered += td.classList[0] == 'covered' ? 1 : 0 });
           if (numCovered >= 5 ) {
             hasBingo = true;
@@ -46,7 +46,7 @@
           }
         }
         for (col = 1; col <= 5; col++) {
-          var numCovered = 0;
+          numCovered = 0;
           $.each($('td.c'+col), function(i, td) { numCovered += td.classList[0] == 'covered' ? 1 : 0 });
           if (numCovered >= 5 ) {
             hasBingo = true;
@@ -55,7 +55,7 @@
           }
         }
         for (diag = 1; diag <= 5; diag++) {
-          var numCovered = 0;
+          numCovered = 0;
           $.each($('td.d'+diag), function(i, td) { numCovered += td.classList[0] == 'covered' ? 1 : 0 });
           if (numCovered >= 5 ) {
             hasBingo = true;
@@ -75,54 +75,7 @@
         alert('testing... '+ str);
       }
     </script>
-    <style>
-      table {
-        border-radius: 32px 32px 32px 32px;
-        background-color: #606060;
-        margin-top: 30px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      th {
-        background-color: #808080;
-        height: 90px;
-        text-align: center;
-        font-size: 48pt;
-        color: #e0e0e0;
-        text-shadow: -2px -2px 0 #606060,	2px -2px 0 #606060,	-2px 2px 0 #606060,	2px 2px 0 #606060;
-      }
-      td {
-        background-color: #e0e0e0;
-        height: 130px;
-        width: 150px;
-        text-align: center;
-        font-size: 14pt;
-        color: #404040;
-        padding: 5px;
-      }
-      .btn {
-        width: 97px;
-        height: 60px;
-        border: 2px solid;
-        border-radius: 8px;
-        font-size: 16pt;
-        text-align: center;
-      }
-      th:first-child { border-radius: 30px 0 0 0; }
-      th:last-child { border-radius: 0 30px 0 0; }
-      tr:last-child td:first-child { border-radius: 0 0 0 30px; }
-      tr:last-child td:last-child { border-radius: 0 0 30px 0; }
-      div {
-        text-align: center;
-        margin-top: 10px;
-      }
-      @media print {
-        .btn { display: none; }
-        th { background-color: #e0e0e0 !important; }
-        td.covered { background-color: #e0e0e0 !important; }
-        td.uncovered { background-color: #ffffff !important; }
-      }
-    </style>
+    <style>td { font-size: 14pt; }</style>
   </head>
   <body>
     <table>
