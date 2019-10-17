@@ -2,6 +2,8 @@
 <html>
   <head>
     <title>Buzzword Bingo</title>
+    <style>td { font-size: 14pt; line-height: 150%; }</style>
+    <script src="jquery-confirm.min.js"></script>
     <script type="text/javascript">
       var dkColor;
       var ltColor;
@@ -71,10 +73,12 @@
         $.each($('td'), function(i, td) { td.style.backgroundColor = td.classList[0] == 'covered' ? dkColor : ltColor; });
       }
       function custom_alert(str) {
-        alert('testing... '+ str);
+        $.alert({
+          title: 'BINGO',
+          content: str,
+        });
       }
     </script>
-    <style>td { font-size: 14pt; line-height: 150%; }</style>
   </head>
   <body>
     <table>
