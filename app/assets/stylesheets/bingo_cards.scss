@@ -47,3 +47,12 @@ div {
   td.covered   { background-color: #e0e0e0; }
   td.uncovered { background-color: #ffffff; }
 }
+span.alert-title {
+  background-color: #808080;
+  font-size: 48pt;
+  color: #e0e0e0;
+  text-shadow: -2px -2px 0 #606060,	2px -2px 0 #606060,	-2px 2px 0 #606060,	2px 2px 0 #606060;
+}
+span.alert-content {
+  font-size: 20px;
+}
