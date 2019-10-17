@@ -30,7 +30,7 @@
         var numCovered = 0;
         $.each($('td'), function(i, td) { numCovered += td.classList[0] == 'covered' ? 1 : 0 });
         if (numCovered >= 25 ) {
-          custom_alert('Blackout Bingo!');
+          custom_alert('Blackout');
           return;
         }
         if (numCovered <= 1) {
@@ -42,7 +42,7 @@
           $.each($('td.r'+row), function(i, td) { numCovered += td.classList[0] == 'covered' ? 1 : 0 });
           if (numCovered >= 5 ) {
             hasBingo = true;
-            custom_alert('Row ' + row + ' Bingo!');
+            custom_alert('Row ' + row);
             return;
           }
         }
@@ -51,7 +51,7 @@
           $.each($('td.c'+col), function(i, td) { numCovered += td.classList[0] == 'covered' ? 1 : 0 });
           if (numCovered >= 5 ) {
             hasBingo = true;
-            custom_alert('Column ' + col + ' Bingo!');
+            custom_alert('Column ' + col);
             return;
           }
         }
@@ -60,7 +60,7 @@
           $.each($('td.d'+diag), function(i, td) { numCovered += td.classList[0] == 'covered' ? 1 : 0 });
           if (numCovered >= 5 ) {
             hasBingo = true;
-            custom_alert('Diagonal ' + diag + ' Bingo!');
+            custom_alert('Diagonal ' + diag);
             return;
           }
         }
@@ -74,7 +74,9 @@
       }
       function custom_alert(str) {
         $.alert({
-          title: 'BINGO',
+          boxWidth: '60%',
+          useBootstrap: false,
+          title: 'BINGO!',
           content: str,
         });
       }
