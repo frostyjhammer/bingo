@@ -3,7 +3,6 @@
   <head>
     <title>Buzzword Bingo</title>
     <style>td { font-size: 14pt; line-height: 150%; }</style>
-    <script src="jquery-confirm.min.js"></script>
     <script type="text/javascript">
       var dkColor;
       var ltColor;
@@ -78,6 +77,8 @@
           useBootstrap: false,
           title: '<span class="alert-title">&nbsp;&nbsp;BINGO!&nbsp;&nbsp;</span>',
           content: '<span class="alert-content">'+str+'</span>',
+          escapeKey: true,
+          backgroundDismiss: true
         });
       }
     </script>
