@@ -72,8 +72,8 @@
         $.each($('td'), function(i, td) { td.style.backgroundColor = td.classList[0] == 'covered' ? dkColor : ltColor; });
       }
       function custom_alert(str) {
-        $.alert({
-          boxWidth: '300px',
+        $.dialog({
+          boxWidth: '330px',
           useBootstrap: false,
           title: '<span class="alert-title">&nbsp;BINGO!&nbsp;</span>',
           content: '<span class="alert-content">'+str+'</span>',
