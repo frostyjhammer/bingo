@@ -54,6 +54,14 @@ div {
   text-shadow: -2px -2px 0 #606060;
   border-radius: 32px 32px 0 0;
 }
-.alert-content {
+span.alert-content {
   font-size: 20px;
+}
+div.jconfirm-content {
+  margin-left: 20px;
+  margin-right: 20px;
+  border-left: 15px solid #808080;
+  border-right: 15px solid #808080;
+}
+div.jconfirm-content-pane {
 }
