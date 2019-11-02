@@ -72,7 +72,7 @@ function custom_alert(str) {
     title: '<span class="alert-title">&nbsp;BINGO!&nbsp;</span>',
     content: '<span class="alert-content">'+str+'</span>',
     escapeKey: true,
-    backgroundDismiss: true,
+    backgroundDismiss: false,
     animationSpeed: 1234
   });
 }
