@@ -49,16 +49,22 @@ div {
 }
 div.jconfirm-title-c {
   margin-top: 40px;
-  width: 330px;
+  width: 258px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-left: 15px solid #808080;
+  border-right: 15px solid #808080;
 }
 .alert-title {
   background-color: #808080;
   font-size: 44pt;
   color: #e0e0e0;
   text-shadow: -2px -2px 0 #606060;
-  border-radius: 32px 32px 0 0;
+  border-radius: 20px 20px 0 0;
   margin-bottom: 0;
   font-weight: bold;
+
+  margin-left: -15px;
 }
 span.alert-content {
   font-size: 20px;
@@ -69,6 +75,7 @@ div.jconfirm-content {
   margin-right: 20px;
   border-left: 15px solid #808080;
   border-right: 15px solid #808080;
+  width: 258px;
 }
 div.jconfirm-content-pane {
   margin-top: 0px;
