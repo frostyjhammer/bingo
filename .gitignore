@@ -19,3 +19,5 @@
 # Ignore MacOS stuffs
 .DS_Store
 ._*
+Gemfile.lock
+
