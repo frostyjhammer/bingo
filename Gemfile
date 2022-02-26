@@ -45,3 +45,6 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# 2022-02-26 per recommendation from Dependabot
+gem "actionpack", ">= 5.2.6.2"
